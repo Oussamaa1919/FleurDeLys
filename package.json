@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "server": "nodemon server"
+    "server": "nodemon server",
+    "admin": "npm start --prefix admin",
+    "dev": "concurrently \"npm run server\"  \"npm run admin\""
   },
   "author": "Med Oussema Salhi",
   "license": "ISC",
@@ -19,6 +21,7 @@
     "request": "^2.88.2"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "concurrently": "^8.2.0",
     "nodemon": "^3.0.1"
   }
