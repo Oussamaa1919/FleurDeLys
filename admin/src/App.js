@@ -6,10 +6,19 @@ import Alert from './components/layout/Alert';
 import Login from './components/auth/Login'
 import PrivateRoute from './components/routing/PrivateRoute';
 import { LOGOUT } from './actions/types';
-import Home from './components/layout/Home';
+import Home from './components/Acceuil/Home';
 import SideBar from './components/layout/SideBar'
 import Navbar from './components/layout/Navbar';
-
+import VideoDacceuil from './components/Acceuil/VideoDacceuil';
+import ForfaitsCaroussel from './components/Acceuil/ForfaitsCaroussel';
+import CarousselAccel from './components/Acceuil/CarousselAccel';
+import InformationAcceuil from './components/Acceuil/InformationAcceuil';
+import NosMariees from './components/nosMariees/NosMariees';
+import Equipe from './components/Equipe/Equipe';
+import NosForfaits from './components/NosForfaits/NosForfaits';
+import Actualites from './components/Actualites/Actualites';
+import PasswordForm from './components/auth/PasswordForm';
+import Formations from './components/NosFormations/Formations';
 //Redux
 import { Provider } from 'react-redux';
 import store from './store';
@@ -49,6 +58,17 @@ const App = () => {
      
       <Route path="login" element={<Login />} />
       <Route path="home" element={<PrivateRoute component={Home} />} />
+      <Route path="informationacceuil" element={<PrivateRoute component={InformationAcceuil} />} />
+      <Route path="videoacceuil" element={<PrivateRoute component={VideoDacceuil} />} />
+      <Route path="carousselaccel" element={<PrivateRoute component={CarousselAccel} />} />
+      <Route path="faorfaitscaroussel" element={<PrivateRoute component={ForfaitsCaroussel} />} />
+      <Route path="nosmariees" element={<PrivateRoute component={NosMariees} />} />
+      <Route path="equipe" element={<PrivateRoute component={Equipe} />} />
+      <Route path="nosforfaits" element={<PrivateRoute component={NosForfaits} />} />
+      <Route path="actualites" element={<PrivateRoute component={Actualites} />} />
+      <Route path="passwordform" element={<PrivateRoute component={PasswordForm} />} />
+      <Route path="formations" element={<PrivateRoute component={Formations} />} />
+
 
 
 

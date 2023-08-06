@@ -26,17 +26,15 @@ const SideBar = ({ auth: { isAuthenticated }, logout }) => {
         <li>
           <Link to= '/home'>
           <a href='#'>
-            <span className="icon"><i className=" fas fa-solid fa-house-user" /></span>
-            <span className="title">Home</span>
+            <span className="title">Acceuil</span>
           </a>
           </Link>
         </li>
 
         <li>
-        <Link to='/companies'>
+        <Link to='/nosmariees'>
         <a href="#">
-            <span className="icon"> <i className="fas fa-solid fa-building"></i></span>
-            <span className="title">Companies</span>
+            <span className="title">Nos Mariées </span>
           </a>
           </Link>
           </li>
@@ -44,8 +42,7 @@ const SideBar = ({ auth: { isAuthenticated }, logout }) => {
           <li>
         <Link to='/events'>
         <a href="#">
-            <span className="icon"><i className="fas fa-solid fa-calendar"></i></span>
-            <span className="title">Events</span>
+            <span className="title">Nos Services</span>
           </a>
           </Link>
           </li>
@@ -53,25 +50,43 @@ const SideBar = ({ auth: { isAuthenticated }, logout }) => {
          
 
         <li>
-        <Link to='/internships'>
+        <Link to='/equipe'>
         <a href="#">
-            <span className="icon"> <i className=" fas fa-solid fa-briefcase" /></span>
-            <span className="title">Internships</span>
+            <span className="title">Equipe</span>
+          </a>
+          </Link>
+          </li>
+          <li>
+            <Link to='/nosforfaits'>
+            <a href="#">
+            <span className="title">Nos Forfaits</span>
+          </a>
+          </Link>
+          </li>
+          <li>
+            <Link to='/formations'>
+            <a href="#">
+            <span className="title">Nos Formations</span>
+          </a>
+          </Link>
+          </li>
+          <li>
+            <Link to='/actualites'>
+            <a href="#">
+            <span className="title">Actualités</span>
           </a>
           </Link>
           </li>
           <li>
             <Link to='/trainings'>
             <a href="#">
-            <span className="icon"><i className="fas fa-duotone fa-laptop-code"></i></span>
-            <span className="title">Trainings</span>
+            <span className="title">FDL Beauty Shop</span>
           </a>
           </Link>
           </li>
           <li>
         <Link to='/passwordform'>
         <a href="#">
-            <span className="icon"><i class="fas fa-solid fa-lock"></i></span>
             <span className="title">Password</span>
           </a>
           </Link>
