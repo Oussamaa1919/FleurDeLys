@@ -2,17 +2,15 @@ const mongoose = require('mongoose');
 
 const ForfaitsCaroussel = new mongoose.Schema({
   
-  photos: [
-    {
-      imagePath: {
-        type: String,
-        required: true,
-      },
-      
-    },
-  ],
+  text: {
+    type: String,
+  
+  },
+  photos: [{
+    type: String,
+  }],
   
   
 });
 
-module.exports = mongoose.model('ForfaitsCaroussel', ForfaitsCarousselSchema);
+module.exports = mongoose.model('forfaitscaroussel', ForfaitsCaroussel);

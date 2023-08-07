@@ -23,6 +23,9 @@ app.use(express.json());
 
 app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/videoaccuiel',require('./routes/api/VideoAccueil'));
+app.use('/api/informationaccuiel',require('./routes/api/informationAccueil'));
+app.use('/api/forfaitscaroussel',require('./routes/api/forfaitsCaroussel'));
+app.use('/api/carousselaccel',require('./routes/api/carousselAccel'));
 
 
 const PORT = process.env.PORT || 5000;

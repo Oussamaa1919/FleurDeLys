@@ -1,8 +1,11 @@
 const mongoose = require('mongoose');
 
 const VideoAccueilSchema = new mongoose.Schema({
+  text: {
+    type: String,
   
-  videoPath: {
+  },
+  video: {
     type: String,
     required: true,
   }
