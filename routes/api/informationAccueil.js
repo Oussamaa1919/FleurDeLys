@@ -9,9 +9,8 @@ const { check, validationResult } = require('express-validator');
 
 
 
-// Upload or update video
 router.put('/', adminauth,
- upload.single('video'),
+ 
  check('description', 'Description is required').notEmpty(),
   check('titreactualités', 'Titre actualités is required').notEmpty(),
   check('actualités', 'Actualités is required').notEmpty(),
@@ -24,7 +23,7 @@ router.put('/', adminauth,
     let informationacceuil = await InformationAccueil.findOne();
 
     if (!informationacceuil) {
-      // If no video exists, create a new one
+      
       informationacceuil = new InformationAccueil({
         description: req.body.description,
         titreactualités: req.body.titreactualités,
@@ -32,7 +31,7 @@ router.put('/', adminauth,
 
       });
     } else {
-      // If video exists, update its properties
+      
       informationacceuil.description = req.body.description;
       informationacceuil.titreactualités = req.body.titreactualités;
       informationacceuil.actualités = req.body.actualités;
