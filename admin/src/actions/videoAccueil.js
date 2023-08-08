@@ -7,10 +7,15 @@ import {
 } from './types';
 
 
-export const  createVideoAccueil = (formData, ) =>
+export const  createVideoAccueil = (formData ) =>
 async (dispatch) => {
   try {
-    const res = await api.put('/videoaccuiel', formData);
+  
+    const res = await api.put('/videoaccuiel', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    });
 
     dispatch({
       type: UPDATE_VIDEOACCUEIL,

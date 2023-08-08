@@ -1,27 +1,27 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { createInformationAccueil } from '../../actions/informationAccuiel'; // Make sure to import the correct path
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { createInformationAccueil } from '../../actions/informationAccuiel'; 
 
-const InformationAcceuil = () => {
-  const dispatch = useDispatch();
-  const informationAccueilState = useSelector(state => state.informationAccueil);
+const InformationAcceuil = ({createInformationAccueil}) => {
 
   const [formData, setFormData] = useState({
+    
+    
     description: '',
     titreactualités: '',
-    actualités: ''
+    actualités: '',  
+    
+    
+    
   });
 
   const { description, titreactualités, actualités } = formData;
 
-  const onChange = e => {
+  const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
-  const onSubmit = e => {
-    e.preventDefault();
-    dispatch(createInformationAccueil(formData));
-  };
+  
 
   return (
     <div className='container-trainings'>
@@ -29,11 +29,14 @@ const InformationAcceuil = () => {
         <div className="details">
           <div className="table">
             <div className="Header">
-              <h2>{informationAccueilState.informationaccueil ? 'Modifier' : 'Ajouter'} les informations d'accueil</h2>
+              <h2> Modifier les informations d'accueil</h2>
               <small>* = required field</small>
             </div>
             <div className="internship">
-              <form className="form" onSubmit={onSubmit}>
+              <form className="form"onSubmit={(e)=> {
+        e.preventDefault();
+        createInformationAccueil(formData);
+      }}>
                 <div className='form-group'>
                 <textarea
                     id="description"
@@ -67,7 +70,7 @@ const InformationAcceuil = () => {
                 <input
                   type="submit"
                   className="internshipBtn"
-                  value={informationAccueilState.informationaccueil ? 'MODIFIER' : 'AJOUTER'}
+                  value='MODIFIER'  
                 />
               </form>
             </div>
@@ -76,6 +79,8 @@ const InformationAcceuil = () => {
       </div>
     </div>
   );
-};
-
-export default InformationAcceuil;
+}
+InformationAcceuil.propTypes={
+  createInformationAccueil:PropTypes.func.isRequired,
+}
+export default connect(null,{createInformationAccueil})(InformationAcceuil);
