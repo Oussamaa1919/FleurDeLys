@@ -35,15 +35,24 @@ body
 }
 .alert {
   padding: 0.8rem;
-  margin: 4rem 0;
-  background: #00050b;
-  color: #f0f2f5;
+  margin: 1rem 0;
+  opacity: 0.9;
+  background: #000810;
+  color: #f5f2f2;
+}
+.alert-success {
+  background:#00000a ;
+  color: #f6f1f1;
 }
 .alert-wrapper {
   position: fixed;
-  right: 4rem;
+  top: 4rem;
+  right: 2rem;
   display: inline-block;
-
+}
+.alert-danger {
+  background: #000204;
+  color: #fff;
 }
 /****************training-card****************/
 #cardbody{
@@ -566,7 +575,6 @@ pointer-events: none;}
   width: calc(100% - 300px);
   left:300px;
   min-height: 100vh;
-  background:var(--withe);
   transition: 0.5s;
 }
 .mainevent{
