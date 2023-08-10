@@ -34,6 +34,19 @@ router.put('/', adminauth, upload.array('photos'), async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
+router.get('/', async (req, res) => {
+  try {
+    const carousselaccel = await CarousselAccel.findOne();
 
+    if (!carousselaccel) {
+      return res.status(404).json({ message: 'No photos found' });
+    }
+
+    res.json(carousselaccel);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
 
 module.exports = router;

@@ -1,34 +1,34 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-const VideoAccueil = require('../../models/VideoAccueil');
+const CardFormation = require('../../models/CardFormation');
 const upload = require('../../middleware/storage')
 const adminauth = require('../../middleware/adminauth');
 
 
 
 // Upload or update video
-router.put('/', adminauth, upload.single('video'), async (req, res) => {
+router.put('/', adminauth, upload.single('photo'), async (req, res) => {
   try {
-    let videoaccuiel = await VideoAccueil.findOne();
+    let cardformation = await CardFormation.findOne();
 
-    if (!videoaccuiel) {
+    if (!cardformation) {
       // If no video exists, create a new one
-      videoaccuiel = new VideoAccueil({
+      cardformation = new CardFormation({
         text: req.body.text,
       });
     } else {
       // If video exists, update its properties
-      videoaccuiel.text = req.body.text;
+      cardformation.text = req.body.text;
     }
 
     if (req.file) {
-      videoaccuiel.video = req.file.path;
+      cardformation.photo = req.file.path;
     }
 
-    await videoaccuiel.save();
+    await cardformation.save();
 
-    res.json(videoaccuiel);
+    res.json(cardformation);
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
@@ -36,13 +36,13 @@ router.put('/', adminauth, upload.single('video'), async (req, res) => {
 });
 router.get('/', async (req, res) => {
   try {
-    const video = await VideoAccueil.findOne();
+    const cardformation = await CardFormation.findOne();
 
-    if (!video) {
-      return res.status(404).json({ message: 'No video found' });
+    if (!cardformation) {
+      return res.status(404).json({ message: 'No photo found' });
     }
 
-    res.json(video);
+    res.json(cardformation);
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');

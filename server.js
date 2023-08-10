@@ -26,6 +26,9 @@ app.use('/api/videoaccuiel',require('./routes/api/VideoAccueil'));
 app.use('/api/informationaccuiel',require('./routes/api/informationAccueil'));
 app.use('/api/forfaitscaroussel',require('./routes/api/forfaitsCaroussel'));
 app.use('/api/carousselaccel',require('./routes/api/carousselAccel'));
+app.use('/api/carousselformation',require('./routes/api/carousselFormation'));
+app.use('/api/cardformation',require('./routes/api/cardFormation'));
+app.use('/api/formations',require('./routes/api/formations'));
 
 
 const PORT = process.env.PORT || 5000;

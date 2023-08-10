@@ -18,7 +18,6 @@ const CarousselAccel = ({createCarousselAccel}) => {
     
     
     await createCarousselAccel(formData);
-    
   }
   const handlePhotoChange = (event) => {
     const files = event.target.files;

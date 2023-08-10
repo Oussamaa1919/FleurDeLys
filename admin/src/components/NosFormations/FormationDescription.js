@@ -1,6 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { createFormationDescription } from '../../actions/formationDescription'; 
 
-const FormationDescription = () => {
+const FormationDescription = ({createFormationDescription}) => {
+
+  const [formData, setFormData] = useState({
+    
+    description: '',
+    
+  });
+  const { description } = formData;
+
+  const onChange = (e) =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
+
   return (
     <div className='container-trainings'>
  <div className='main'>
@@ -11,18 +26,22 @@ const FormationDescription = () => {
    <div className="table">
      <div className="Header">
       
-       <h2>Ajouter les information d'acceuil</h2>
+       <h2>Ajouter la description de la formation</h2>
        <small>* = required field</small>
      </div>
      <div className="internship">
      <form
-   className="form">
+   className="form"onSubmit={(e)=> {
+    e.preventDefault();
+    createFormationDescription(formData);
+  }}>
          <div className='form-group'>
          
          <input type="text"
           placeholder="* Description"
-          name="Description"
-         
+          name="description"
+          value={description}
+          onChange={onChange}
           required
           />
         </div>
@@ -42,5 +61,7 @@ const FormationDescription = () => {
 </div>
   )
 }
-
-export default FormationDescription
+FormationDescription.propTypes={
+  createFormationDescription:PropTypes.func.isRequired,
+}
+export default connect(null,{createFormationDescription})(FormationDescription);

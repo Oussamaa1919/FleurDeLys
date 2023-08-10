@@ -1,20 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-const ForfaitsCaroussel = require('../../models/ForfaitsCaroussel');
+const FormationCaroussel = require('../../models/FormationCaroussel');
 const upload = require('../../middleware/storage')
 const adminauth = require('../../middleware/adminauth');
 
 
 
-// Upload or update video
+// Upload or update photos
 router.put('/', adminauth, upload.array('photos'), async (req, res) => {
   try {
-    let carousselItem = await ForfaitsCaroussel.findOne();
+    let carousselItem = await FormationCaroussel.findOne();
 
     if (!carousselItem) {
       // If no carousel item exists, create a new one
-      carousselItem = new ForfaitsCaroussel({
+      carousselItem = new FormationCaroussel({
         text: req.body.text,
       });
     } else {
@@ -34,19 +34,19 @@ router.put('/', adminauth, upload.array('photos'), async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
-
 router.get('/', async (req, res) => {
   try {
-    const forfaitcaroussel = await ForfaitsCaroussel.findOne();
+    const formationcaroussel = await FormationCaroussel.findOne();
 
-    if (!forfaitcaroussel) {
+    if (!formationcaroussel) {
       return res.status(404).json({ message: 'No photos found' });
     }
 
-    res.json(forfaitcaroussel);
+    res.json(formationcaroussel);
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
   }
 });
+
 module.exports = router;
