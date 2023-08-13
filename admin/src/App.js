@@ -14,7 +14,7 @@ import ForfaitsCaroussel from './components/Acceuil/ForfaitsCaroussel';
 import CarousselAccel from './components/Acceuil/CarousselAccel';
 import InformationAcceuil from './components/Acceuil/InformationAcceuil';
 import NosMariees from './components/nosMariees/NosMariees';
-import Equipe from './components/Equipe/Equipe';
+import EquipeFrom from './components/Equipe/EquipeForm';
 import NosForfaits from './components/NosForfaits/NosForfaits';
 import Actualites from './components/Actualites/Actualites';
 import PasswordForm from './components/auth/PasswordForm';
@@ -63,7 +63,7 @@ const App = () => {
       <Route path="carousselaccel" element={<PrivateRoute component={CarousselAccel} />} />
       <Route path="faorfaitscaroussel" element={<PrivateRoute component={ForfaitsCaroussel} />} />
       <Route path="nosmariees" element={<PrivateRoute component={NosMariees} />} />
-      <Route path="equipe" element={<PrivateRoute component={Equipe} />} />
+      <Route path="equipe" element={<PrivateRoute component={EquipeFrom} />} />
       <Route path="nosforfaits" element={<PrivateRoute component={NosForfaits} />} />
       <Route path="actualites" element={<PrivateRoute component={Actualites} />} />
       <Route path="passwordform" element={<PrivateRoute component={PasswordForm} />} />

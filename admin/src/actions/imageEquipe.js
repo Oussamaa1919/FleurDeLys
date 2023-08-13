@@ -2,23 +2,28 @@ import api from '../utils/api';
 import { setAlert } from './alert';
 
 import {  
-  UPDATE_FORMATIONDESCRIPTION,
-  FORMATIONDESCRIPTION_ERROR
+  UPDATE_IMAGEEQUIPE,
+  IMAGEEQUIPE_ERROR
 } from './types';
 
 
-export const  createFormationDescription = (formData ) =>
+export const  createEuipeImage = (formData ) =>
 async (dispatch) => {
   try {
-    const res = await api.put('/formations', formData);
+  
+    const res = await api.put('/equipeimage', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    });
 
     dispatch({
-      type: UPDATE_FORMATIONDESCRIPTION,
+      type: UPDATE_IMAGEEQUIPE,
       payload: res.data
     });
 
     dispatch(
-      setAlert( 'Formation description modifié' , 'success')
+      setAlert( 'photo modifié' , 'success')
     );
 
     
@@ -30,7 +35,7 @@ async (dispatch) => {
     }
 
     dispatch({
-      type: FORMATIONDESCRIPTION_ERROR,
+      type: IMAGEEQUIPE_ERROR,
       payload: { msg: err.response.statusText, status: err.response.status }
     });
   }

@@ -36,15 +36,15 @@ const FormationDescription = ({createFormationDescription}) => {
     createFormationDescription(formData);
   }}>
          <div className='form-group'>
-         
-         <input type="text"
-          placeholder="* Description"
-          name="description"
-          value={description}
-          onChange={onChange}
-          required
-          />
-        </div>
+                <textarea
+                    id="description"
+                    name="description"
+                    placeholder="* description"
+                    value={description}
+                    onChange={onChange}
+                    required
+                  />
+                </div>
        
 
        

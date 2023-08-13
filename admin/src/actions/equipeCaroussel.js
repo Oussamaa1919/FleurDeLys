@@ -2,23 +2,27 @@ import api from '../utils/api';
 import { setAlert } from './alert';
 
 import {  
-  UPDATE_FORMATIONDESCRIPTION,
-  FORMATIONDESCRIPTION_ERROR
+  UPDATE_EQUIPECAROUSSEL,
+  EQUIPECAROUSSEL_ERROR
 } from './types';
 
 
-export const  createFormationDescription = (formData ) =>
+export const  createEquipeCaroussel = (formData, ) =>
 async (dispatch) => {
   try {
-    const res = await api.put('/formations', formData);
+    const res = await api.put('/equipecaroussel', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    });
 
     dispatch({
-      type: UPDATE_FORMATIONDESCRIPTION,
+      type: UPDATE_EQUIPECAROUSSEL,
       payload: res.data
     });
 
     dispatch(
-      setAlert( 'Formation description modifié' , 'success')
+      setAlert( 'Equipe Caroussel modifié' , 'success')
     );
 
     
@@ -30,7 +34,7 @@ async (dispatch) => {
     }
 
     dispatch({
-      type: FORMATIONDESCRIPTION_ERROR,
+      type: EQUIPECAROUSSEL_ERROR,
       payload: { msg: err.response.statusText, status: err.response.status }
     });
   }

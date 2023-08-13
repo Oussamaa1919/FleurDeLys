@@ -29,6 +29,8 @@ app.use('/api/carousselaccel',require('./routes/api/carousselAccel'));
 app.use('/api/carousselformation',require('./routes/api/carousselFormation'));
 app.use('/api/cardformation',require('./routes/api/cardFormation'));
 app.use('/api/formations',require('./routes/api/formations'));
+app.use('/api/equipecaroussel',require('./routes/api/EquipeCaroussel'));
+app.use('/api/equipeimage',require('./routes/api/equipeImage'));
 
 
 const PORT = process.env.PORT || 5000;

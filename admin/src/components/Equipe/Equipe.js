@@ -1,6 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { createEquipeCaroussel  } from '../../actions/equipeCaroussel';
 
-const Equipe = () => {
+
+
+
+
+
+const Equipe = ({createEquipeCaroussel}) => {
+
+  const [photos, setPhotos] = useState([]);
+  async function handleOnSubmit(e) {
+    e.preventDefault();
+       
+    const formData = new FormData();
+    
+    
+    for (const photo of photos) {
+      formData.append('photos', photo);
+    }
+    
+    
+    await createEquipeCaroussel(formData);
+    
+  }
+  const handlePhotoChange = (event) => {
+    const files = event.target.files;
+    const newPhotos = Array.from(files);
+    setPhotos(newPhotos);
+  };
+
+
   return (
     <div className='container-trainings'>
     <div className='main'>
@@ -11,55 +42,28 @@ const Equipe = () => {
       <div className="table">
         <div className="Header">
          
-          <h2>Ajouter les images de la section d'equipe</h2>
+          <h2>Ajouter les images de votre equipe</h2>
           <small>* = required field</small>
         </div>
         <div className="internship">
         <form
-      className="form">
+      className="form" encType='multipart/form-data' onSubmit={handleOnSubmit}>
            <div className="form-group">
-               <input
-                 type="file"
-                 placeholder="* imagesforfaits"
-                 name="imagesforfaits"    
-                 className='custom-file-input-resume'
-                 
-                 required         
-               />                   
-             </div>
-             <div className="form-group">
-               <input
-                 type="file"
-                 placeholder="* imagesforfaits"
-                 name="imagesforfaits"    
-                 className='custom-file-input-resume'
-                 
-                 required         
-               />                   
-             </div>
-             <div className="form-group">
-               <input
-                 type="file"
-                 placeholder="* imagesforfaits"
-                 name="imagesforfaits"    
-                 className='custom-file-input-resume'
-                 
-                 required         
-               />                   
-             </div>
-             <div className="form-group">
-               <input
-                 type="file"
-                 placeholder="* imagesforfaits"
-                 name="imagesforfaits"    
-                 className='custom-file-input-resume'
-                 
-                 required         
-               />                   
-             </div>
+           <input
+              type="file"
+              placeholder="* photos"
+              name="photos"    
+              className='custom-file-input-resume'
+              id="photos-upload" 
+              accept="image/*"
+              multiple
+              onChange={handlePhotoChange} 
+              required      
+            />                   
+          </div>
    
            
-          <input type="submit" className="internshipBtn" value="AJOUTER" />
+          <input type="submit" className="internshipBtn" value="MODIFIER" />
          
         </form>
         </div>
@@ -71,4 +75,7 @@ const Equipe = () => {
   )
 }
 
-export default Equipe
+Equipe.propTypes = {
+  createEquipeCaroussel:PropTypes.func.isRequired,
+}
+export default connect(null,{createEquipeCaroussel})(Equipe)

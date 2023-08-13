@@ -8,6 +8,8 @@ import carousselAccel from './carousselAccel'
 import CardFormation from './cardFormation';
 import formationDescription from './formationDescription'
 import formationCaroussel from './formationCaroussel'
+import equipeCaroussel from './equipeCaroussel'
+import imageEquipe from './imageEquipe'
 export default combineReducers({
   alert,
   auth,
@@ -17,6 +19,8 @@ export default combineReducers({
   carousselAccel,
   CardFormation,
   formationDescription,
-  formationCaroussel
+  formationCaroussel,
+  equipeCaroussel,
+  imageEquipe
   
 });
