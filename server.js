@@ -34,6 +34,9 @@ app.use('/api/equipeimage',require('./routes/api/equipeImage'));
 app.use('/api/actualites',require('./routes/api/actualites'));
 app.use('/api/actualitesimage',require('./routes/api/actualitesImage'));
 app.use('/api/forfait',require('./routes/api/forfait'));
+app.use('/api/carousselmimi',require('./routes/api/carousselMimi'));
+app.use('/api/carousselaccessoires',require('./routes/api/carousselAccessoires'));
+
 
 
 

@@ -1,5 +1,5 @@
 
-import React, { Fragment } from 'react';
+import React, { Fragment , useState} from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -8,7 +8,7 @@ import Login from '../auth/Login';
 import fdl from '../../images/fdl.png'
 
 const SideBar = ({ auth: { isAuthenticated }, logout }) => {
-  
+
  
 
   
@@ -33,10 +33,11 @@ const SideBar = ({ auth: { isAuthenticated }, logout }) => {
 
         <li>
         <Link to='/nosmariees'>
-        <a href="#">
+        <a href="#"  >
             <span className="title">Nos Mariées </span>
           </a>
           </Link>
+          
           </li>
 
           <li>

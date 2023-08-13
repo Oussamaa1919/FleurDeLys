@@ -1,9 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { createCarousselMimi  } from '../../actions/carousselMimi';
 
-const AccessoiresCarousselMimi = () => {
+const AccessoiresCarousselMimi = ({createCarousselMimi}) => {
+
+  const [photos, setPhotos] = useState([]);
+  async function handleOnSubmit(e) {
+    e.preventDefault();
+       
+    const formData = new FormData();
+    
+    
+    for (const photo of photos) {
+      formData.append('photos', photo);
+    }
+    
+    
+    await createCarousselMimi(formData);
+    
+  }
+  const handlePhotoChange = (event) => {
+    const files = event.target.files;
+    const newPhotos = Array.from(files);
+    setPhotos(newPhotos);
+  };
+
   return (
     <div>
-       <div className='container-trainings'>
+      <div className='container-trainings'>
  <div className='main'>
 
  <div className="details">
@@ -12,27 +37,30 @@ const AccessoiresCarousselMimi = () => {
    <div className="table">
      <div className="Header">
       
-       <h2>Ajouter les images de la caroussel MiMi</h2>
+       <h2>Modifier l'image de la caroussel </h2>
        <small>* = required field</small>
      </div>
      <div className="internship">
      <form
-   className="form">
-        <div className="form-group">
-            <input
+      className="form" encType='multipart/form-data' onSubmit={handleOnSubmit}>
+           <div className="form-group">
+           <input
               type="file"
-              placeholder="* imagesaccel"
-              name="imagesaccel"    
+              placeholder="* photos"
+              name="photos"    
               className='custom-file-input-resume'
-              
-              required         
+              id="photos-upload" 
+              accept="image/*"
+              multiple
+              onChange={handlePhotoChange} 
+              required      
             />                   
           </div>
-
-        
-       <input type="submit" className="internshipBtn" value="AJOUTER" />
-      
-     </form>
+   
+           
+          <input type="submit" className="internshipBtn" value="MODIFIER" />
+         
+        </form>
      </div>
    </div>
    </div>
@@ -43,4 +71,8 @@ const AccessoiresCarousselMimi = () => {
   )
 }
 
-export default AccessoiresCarousselMimi
+AccessoiresCarousselMimi.propTypes = {
+  createCarousselMimi:PropTypes.func.isRequired,
+}
+
+export default connect(null,{createCarousselMimi}) (AccessoiresCarousselMimi)

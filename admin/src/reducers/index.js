@@ -12,6 +12,8 @@ import equipeCaroussel from './equipeCaroussel'
 import imageEquipe from './imageEquipe'
 import actualites from './actualites'
 import forfait from './forfait' 
+import CarousselAccessoires from './CarousselAccessoires';
+import carousselMimi from './carousselMimi';
 export default combineReducers({
   alert,
   auth,
@@ -25,6 +27,8 @@ export default combineReducers({
   equipeCaroussel,
   imageEquipe,
   actualites,
-  forfait
+  forfait,
+  CarousselAccessoires,
+  carousselMimi
   
 });
