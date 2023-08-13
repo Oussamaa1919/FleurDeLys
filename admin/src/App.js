@@ -15,10 +15,11 @@ import CarousselAccel from './components/Acceuil/CarousselAccel';
 import InformationAcceuil from './components/Acceuil/InformationAcceuil';
 import NosMariees from './components/nosMariees/NosMariees';
 import EquipeFrom from './components/Equipe/EquipeForm';
-import NosForfaits from './components/NosForfaits/NosForfaits';
-import Actualites from './components/Actualites/Actualites';
+import Actualitesform from './components/Actualites/Actualitesform';
 import PasswordForm from './components/auth/PasswordForm';
 import Formations from './components/NosFormations/Formations';
+import Forfaits from './components/Forfaits/Forfaits';
+import ForfaitForm from './components/Forfaits/ForfaitForm';
 //Redux
 import { Provider } from 'react-redux';
 import store from './store';
@@ -64,10 +65,11 @@ const App = () => {
       <Route path="faorfaitscaroussel" element={<PrivateRoute component={ForfaitsCaroussel} />} />
       <Route path="nosmariees" element={<PrivateRoute component={NosMariees} />} />
       <Route path="equipe" element={<PrivateRoute component={EquipeFrom} />} />
-      <Route path="nosforfaits" element={<PrivateRoute component={NosForfaits} />} />
-      <Route path="actualites" element={<PrivateRoute component={Actualites} />} />
+      <Route path="actualites" element={<PrivateRoute component={Actualitesform} />} />
       <Route path="passwordform" element={<PrivateRoute component={PasswordForm} />} />
       <Route path="formations" element={<PrivateRoute component={Formations} />} />
+      <Route path="forfaits" element={<PrivateRoute component={Forfaits} />} />
+      <Route path="forfaitfrorm" element={<PrivateRoute component={ForfaitForm} />} />
 
 
 

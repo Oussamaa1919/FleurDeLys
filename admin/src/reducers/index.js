@@ -10,6 +10,8 @@ import formationDescription from './formationDescription'
 import formationCaroussel from './formationCaroussel'
 import equipeCaroussel from './equipeCaroussel'
 import imageEquipe from './imageEquipe'
+import actualites from './actualites'
+import forfait from './forfait' 
 export default combineReducers({
   alert,
   auth,
@@ -21,6 +23,8 @@ export default combineReducers({
   formationDescription,
   formationCaroussel,
   equipeCaroussel,
-  imageEquipe
+  imageEquipe,
+  actualites,
+  forfait
   
 });
