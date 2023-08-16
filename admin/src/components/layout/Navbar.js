@@ -54,7 +54,23 @@ function toggle  (){
    <span style={{ '--i':6 }}>O</span>
    <span style={{ '--i':7 }}>M</span>
    <span style={{ '--i':8}}>E</span>
-   <span style={{ '--i':8}}><i className="fas fa-solid fa-hand-sparkles"></i></span>
+   <span style={{ '--i':9 }}></span>
+   <span style={{ '--i':10 }}>F</span>
+   <span style={{ '--i':11}}>L</span>
+   <span style={{ '--i':12}}>E</span>
+   <span style={{ '--i':13}}>U</span>
+   <span style={{ '--i':14}}>R</span>
+   <span style={{ '--i':15}}></span>
+   <span style={{ '--i':16}}>D</span>
+   <span style={{ '--i':17 }}>E</span>
+   <span style={{ '--i':18}}></span>
+   <span style={{ '--i':19}}>L</span>
+   <span style={{ '--i':20}}>y</span>
+   <span style={{ '--i':21}}>s</span>
+   
+
+   
+   <span style={{ '--i':20}}><i className="fas fa-solid fa-hand-sparkles"></i></span>
 
    </div>
  </div>

@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createOnglerie  } from '../../actions/onglerie';
-const Ongleries = ({createOnglerie}) => {
+import { createExtension  } from '../../../actions/extension';
+
+
+const ExtensionDetailsForm = ({createExtension}) => {
   const [formValues, setFormValues] = useState({
     titre1: '',
     description: '',
     titre2: '',
-    titre3: '',
     link1: '',
     link2: '',
     link3: '',
-    link4: '',
-    photo1: null,
-    photo2: null,
-    photo3: null,
-    photo4: null,
+    
+    photo: null,
+    
   });
   
   const handleFieldChange = (fieldName, value) => {
@@ -39,22 +38,20 @@ const Ongleries = ({createOnglerie}) => {
       }
     }
   
-    await createOnglerie(formData);
+    await createExtension(formData);
   
     // Clear form values
     setFormValues({
       titre1: '',
       description: '',
       titre2: '',
-      titre3: '',
+    
       link1: '',
       link2: '',
       link3: '',
-      link4: '',
-      photo1: null,
-      photo2: null,
-      photo3: null,
-      photo4: null,
+  
+      photo: null,
+     
     });
   }
 
@@ -72,7 +69,7 @@ const Ongleries = ({createOnglerie}) => {
    <div className="table">
      <div className="Header">
       
-       <h2>Modifier Coiffure </h2>
+       <h2>Modifier l'interface de l'extension des cils </h2>
        <small>* = required field</small>
      </div>
      <div className="internship">
@@ -110,16 +107,7 @@ const Ongleries = ({createOnglerie}) => {
                     required
                   />
                 </div>
-                <div className='form-group'>
-                  <input
-                    type="text"
-                    placeholder="* Titre 3"
-                    name="titre"
-                    value={formValues.titre3}
-                    onChange={e => handleFieldChange('titre3', e.target.value)}
-                    required
-                  />
-                </div>
+                
                 <div className='form-group'>
                   <input
                     type="text"
@@ -150,74 +138,24 @@ const Ongleries = ({createOnglerie}) => {
                     required
                   />
                 </div>
-                <div className='form-group'>
-                  <input
-                    type="text"
-                    placeholder="* Link 4"
-                    name="titre"
-                    value={formValues.link4}
-                    onChange={e => handleFieldChange('link4', e.target.value)}
-                    required
-                  />
-                </div>
+                
         
         
         <div className="form-group">
             <input
               type="file"
-              placeholder="* photo 1"
+              placeholder="* photo "
               name="photo"  
               accept="imgage/*"
               id="photo-upload"
               className='custom-file-input-resume'
-              onChange={e => handleFieldChange('photo1', e.target.files[0])}
+              onChange={e => handleFieldChange('photo', e.target.files[0])}
 
 
               required         
             />                   
           </div>
-          <div className="form-group">
-            <input
-              type="file"
-              placeholder="* photo 2"
-              name="photo"  
-              accept="imgage/*"
-              id="photo-upload"
-              className='custom-file-input-resume'
-              onChange={e => handleFieldChange('photo2', e.target.files[0])}
-
-
-              required         
-            />                   
-          </div>
-          <div className="form-group">
-            <input
-              type="file"
-              placeholder="* photo 3"
-              name="photo"  
-              accept="imgage/*"
-              id="photo-upload"
-              className='custom-file-input-resume'
-              onChange={e => handleFieldChange('photo3', e.target.files[0])}
-
-
-              required         
-            />                   
-          </div>
-          <div className="form-group">
-            <input
-              type="file"
-              placeholder="* photo 4"
-              name="photo"  
-              accept="imgage/*"
-              id="photo-upload"
-              className='custom-file-input-resume'
-              onChange={e => handleFieldChange('photo4', e.target.files[0])}
-
-
-              required         
-            />                   
-          </div>
+          
           
 
         
@@ -237,8 +175,8 @@ const Ongleries = ({createOnglerie}) => {
 }
 
 
-Ongleries.propTypes = {
-  createOnglerie:PropTypes.func.isRequired,
+ExtensionDetailsForm.propTypes = {
+  createExtension:PropTypes.func.isRequired,
 }
 
-export default connect(null,{createOnglerie}) (Ongleries)
+export default connect(null,{createExtension}) (ExtensionDetailsForm)

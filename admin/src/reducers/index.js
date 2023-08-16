@@ -14,6 +14,19 @@ import actualites from './actualites'
 import forfait from './forfait' 
 import CarousselAccessoires from './CarousselAccessoires';
 import carousselMimi from './carousselMimi';
+import Onglerie from './Onglerie';
+import carousselHair from './carousselHair';
+import soinsVisage from './soinsVisage';
+import soinsCheveux from './soinsCheveux';
+import makeup from './makeup';
+import beforeAndafter from './beforeAndafter';
+import bAaExtension from './bAaextenstion';
+import bAaColoration from './bAaColoration';
+import coloration from './coloration';
+import extension from './extension';
+
+
+
 export default combineReducers({
   alert,
   auth,
@@ -29,6 +42,18 @@ export default combineReducers({
   actualites,
   forfait,
   CarousselAccessoires,
-  carousselMimi
+  carousselMimi,
+  Onglerie,
+  carousselHair,
+  soinsVisage,
+  soinsCheveux,
+  makeup,
+  beforeAndafter,
+  bAaExtension,
+  bAaColoration,
+  coloration,
+  extension
+  
+
   
 });

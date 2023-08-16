@@ -20,6 +20,15 @@ import PasswordForm from './components/auth/PasswordForm';
 import Formations from './components/NosFormations/Formations';
 import Forfaits from './components/Forfaits/Forfaits';
 import ForfaitForm from './components/Forfaits/ForfaitForm';
+import NosServices from './components/NosServices/NosServices';
+import BeforeAndAfter from './components/nosMariees/BeforeAndAfter/BeforeAndAfter';
+import BeforeAndAfterForm from './components/nosMariees/BeforeAndAfter/BeforeAndAfterForm';
+import ExtensionDesCilsForm from './components/NosServices/ExtensionDesCils/ExtensionDesCilsForm';
+import ExtensionDesCils from './components/NosServices/ExtensionDesCils/ExtensionDesCils';
+import ColorationForm from './components/NosServices/Coloration/ColorationForm';
+import FormDetailsColoration from './components/NosServices/Coloration/FormDetailsColoration';
+import ExtensionDetailsForm from './components/NosServices/ExtensionDesCils/ExtensionDetailsForm';
+
 //Redux
 import { Provider } from 'react-redux';
 import store from './store';
@@ -70,6 +79,14 @@ const App = () => {
       <Route path="formations" element={<PrivateRoute component={Formations} />} />
       <Route path="forfaits" element={<PrivateRoute component={Forfaits} />} />
       <Route path="forfaitfrorm" element={<PrivateRoute component={ForfaitForm} />} />
+      <Route path="nosservices" element={<PrivateRoute component={NosServices} />} />
+      <Route path="beforeandafter" element={<PrivateRoute component={BeforeAndAfter} />} />
+      <Route path="beforeandafterform" element={<PrivateRoute component={BeforeAndAfterForm} />} />
+      <Route path="extensionform" element={<PrivateRoute component={ExtensionDesCilsForm} />} />
+      <Route path="extension" element={<PrivateRoute component={ExtensionDesCils} />} />
+      <Route path="colorationform" element={<PrivateRoute component={ColorationForm} />} />
+      <Route path="formcolorationdetails" element={<PrivateRoute component={FormDetailsColoration} />} />
+      <Route path="formextensiondetails" element={<PrivateRoute component={ExtensionDetailsForm} />} />
 
 
 

@@ -41,7 +41,7 @@ const SideBar = ({ auth: { isAuthenticated }, logout }) => {
           </li>
 
           <li>
-        <Link to='/events'>
+        <Link to='/nosservices'>
         <a href="#">
             <span className="title">Nos Services</span>
           </a>

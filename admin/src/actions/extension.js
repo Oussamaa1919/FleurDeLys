@@ -2,34 +2,40 @@ import api from '../utils/api';
 import { setAlert } from './alert';
 
 import {  
-  UPDATE_VIDEOACCUEIL,
-  VIDEOACCUEIL_ERROR
+  ADD_EXTENSION,
+  EXTENSION_ERROR
 } from './types';
 
 
-export const  createVideoAccueil = (formData ) =>
+export const  createExtension = (formData ) =>
 async (dispatch) => {
   try {
   
-    const res = await api.put('/videoaccuiel', formData, {
+    const res = await api.put('/extension', formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
     });
 
     dispatch({
-      type: UPDATE_VIDEOACCUEIL,
+      type: ADD_EXTENSION,
       payload: res.data
     });
 
     dispatch(
-      setAlert( 'Video Accueil modifié' , 'success')
+      setAlert( 'Extension modifié' , 'success')
     );
 
     
   } catch (err) {
+    const errors = err.response.data.errors;
+
+    if (errors) {
+      errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
+    }
+
     dispatch({
-      type: VIDEOACCUEIL_ERROR,
+      type: EXTENSION_ERROR,
       payload: { msg: err.response.statusText, status: err.response.status }
     });
   }

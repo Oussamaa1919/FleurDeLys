@@ -217,7 +217,7 @@ font-family: 'EB Garamond', serif;
 	position: relative;
 	overflow: hidden;
 	height: 100%;
-	float: right;
+
 	width: 45%;
 	display: inline-block;
 }
@@ -654,11 +654,11 @@ pointer-events: none;}
 /*Cards*/
 .cardBox{
   position: relative;
-  width: 50%;
+  width: 100%;
   padding: 20px;
   display: grid;
-  grid-template-columns: repeat(4,1fr);
-  grid-gap:10px ;
+  grid-template-columns: repeat(8,1fr);
+  grid-gap:20px ;
 }
 
 .cardBox .card {
@@ -1139,22 +1139,17 @@ th{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 1350px;
+  margin-right: 950px;
 }
-.paginationeventlistinscritpion{
+.bapagination{
+  position: relative;
   margin-top: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: -900px;
+  margin-right: 150px;
 }
-.paginationevents{
-  margin-top: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: -280px;
-}
+
 .pageNumbers{
   display: flex;
   padding: 0 1rem;
